@@ -1,0 +1,157 @@
+%let path=/folders/myfolders/sasuser.v94/cprg193; 
+libname orion "&path";
+
+
+
+daat work.newcountry;
+length Country_Code $ 2 Country_Name $ 48;
+infile "&path/country.dat" dlm='!';
+input Country_Code $ Country_Name $;
+run;
+
+proc print data=work.newcountry;
+run;
+
+
+
+data work.country2;
+   length Country_Code $ 2 Country_Name $ 48;
+   infile "&path/country.dat" dlm='!'; 
+   input Country_Code $ Country_Name $;
+run;
+
+proc print data=work.country2;
+run;
+
+
+proc contents data=orion.charities
+;
+run;
+
+proc contents data=orion._all_
+;
+run;
+
+
+
+proc contents data=orion._all_ nods
+;
+run;
+
+
+
+data work.donations;
+   infile "&path/donation.dat"; 
+   input Employee_ID Qtr1 Qtr2 Qtr3 Qtr4;
+   Total=sum(Qtr1,Qtr2,Qtr3,Qtr4);
+run;
+
+proc print data=work.donations;
+run;
+
+
+
+SORTING and GROUPING
+
+proc sort data=orion.sales
+          out=work.sorted;
+   by  Country Gender;* error here;
+run;
+
+proc print data=work.sorted; 
+   by Gender;
+run;
+
+* Error Data set WORK.SORTED is not sorted in ascending sequence. The current BY group has Gender = M and the next BY group has 
+        Gender = F.only a part of DS shown (for AU not US);
+
+
+
+
+
+ proc sort data=orion.sales
+           out=work.sorted;
+   by Gender Country;
+run;
+
+proc print data=work.sorted; 
+   by Gender;
+run;
+
+
+
+
+
+
+title1 'Orion Star Sales Staff';
+title2 'Salary Report';
+footnote1 'Confidential';
+proc sort data=orion.employee_payroll
+			out=work.sort_salary;
+	by Salary;
+run;		
+
+proc print data=work.sort_salary;
+run;	
+
+title1 'helloo';
+proc print data=orion.employee_payroll;
+run;* cancels title2 and replaces title1 text orion...;
+
+
+title;
+footnote;
+
+
+
+
+
+title1 "Australian Sales Employees";
+title2 "Senior Sales Representatives";
+footnote "Job_Title: Sales Rep. IV";
+proc print data=orion.sales noobs split="_";
+var Employee_ID First_Name Last_Name Gender Salary;
+   where Country='AU' and 
+         Job_Title contains 'Rep. IV';
+run;
+title;
+footnote;
+
+
+
+
+5.Formatting
+proc print data=orion.employee_payroll;
+var Employee_ID Salary Birth_Date Employee_Hire_Date;
+format Salary Dollar8.2 Birth_date mmddyy10. Employee_Hire_Date date9.;
+run;
+
+
+
+/*Modify the PROC PRINT step to display only the variables Employee_ID,
+ Salary, Birth_Date, and Employee_Hire_Date.
+Add a FORMAT statement to display Salary in a dollar format,
+ Birth_Date in the 01/31/2012 date style, and Employee_Hire_Date in the 
+ 01JAN2012 date style*/ 
+ other:date7. =01jan97
+ 		date5.=01jan
+
+
+
+
+ data q1birthdays;
+   set orion.employee_payroll;
+   BirthMonth=month(Birth_Date);
+   if BirthMonth le 3;
+run;
+proc format;
+value $GENDER "F"="FEMALE"
+				"M"="MALE";
+value MNAME 1="JANUARY"
+			2="FEBRUARY"
+			3="MARCH";
+run;				
+
+PROC PRINT DATA=q1birthdays;
+format Employee_Gender $GENDER. BirthMonth MNAME.;
+run;

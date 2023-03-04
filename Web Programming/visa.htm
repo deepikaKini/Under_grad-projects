@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>Form for Visa Application</title>
+</head>
+<body>
+<center><h1>VISA APPLICATION</h1>
+<fieldset>
+<form action="a.php" autocomplete="on" method="get">
+Enter your details below:
+<br>
+<table cellpadding="3" cellspacing="3">
+<tr>
+	<td>
+First name<span style="color:#ff1919">*</span>:
+	</td>
+
+<td>
+<input type="text" name="first name" placeholder="first name" required></input>
+</td>
+</tr>
+<tr>
+	<td>
+Last name<span style="color:#ff1919">*</span>:
+</td>
+<td>
+<input type="text" name="last name" placeholder="last name" required></input>
+</td>
+</tr>
+<tr>
+	<td>
+Contact No.<span style="color:#ff1919">*</span>:
+</td>
+<td>
+<input type="tel" name="code" maxlength="3" placeholder="code">
+
+<input type="tel" name="telephone 1" maxlength="10" required ></input>
+</td>
+</tr>
+
+<tr>
+	<td>Contact No.:
+	</td>
+	<td>
+<input type="tel" name="telephone 2" maxlength="10" placeholder="if any" novalidate></input>
+</td>
+</tr>
+
+<tr>
+	<td>
+EMail Id.<span style="color:#ff1919">*</span>:
+</td>
+<td>
+<input type="email" name="emai;" autocomplete="off" multiple="on" required></input>
+</td>
+</tr>
+
+<tr>
+	<td>DOB<span style="color:#ff1919">*</span>:</td>
+	<td>
+<input type="date" name="date" id="date" onchange="_calcAge()" required>
+</td>
+</tr>
+
+<tr>
+	<td>
+Passport type<span style="color:#ff1919">*</span>:
+</td>
+<td>
+	<input type="text" list="pp" placeholder="Click here to see options">
+<datalist id="pp" >
+<option value="Ordinary">
+<option value="Official">
+<option value="Diplomatic">
+<option value="Service">
+</datalist>
+</input>
+</td>
+</tr>
+
+<tr>
+	<td>
+No. of people you want to book the visa for:<br>(maximum is 5)<span style="color:#ff1919">*</span>:
+</td>
+<td>
+<input type="range" id="r" name="a" min="1" max="5" required></input>
+<br>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5
+</td>
+</tr>
+
+<tr>
+	<td>
+No. of years for validity of visa<span style="color:#ff1919">*</span>:<br>(min:4 max:10):
+</td>
+<td>
+<input type="number" min="4" max="10" step="2" value="4" required>
+</td>
+</tr>
+
+<tr>
+	<td>
+Nationality<span style="color:#ff1919">*</span>:
+</td>
+<td>
+<select name="Nationality" required>
+<option value="1">Indian</option>
+<option value="2">American</option>
+<option value="2">Sri Lankan</option>
+<option value="2">Austraian</option>
+</select>
+</td>
+</tr>
+
+<tr>
+	<td>
+Visa Service<span style="color:#ff1919">*</span>:
+</td>
+	<td>
+<br>
+<input type="radio" name="rad" checked>eTourist Visa </input>
+<br>
+<input type="radio" name="rad">eMedical Visa</input>
+<br>
+<input type="radio" name="rad"> eBusiness</input>
+<br>
+</td>
+</tr>
+<tr>
+	<td>
+		<output id="output" value="10"></output>
+	</td>
+</tr>
+
+</table>
+</fieldset>
+<center>
+<input type="submit" name="sub">
+</center>
+</form>
+<script type="text/javascript">
+ 
+
+
+    //Calculates age from given Birth Date in the form//
+    function _calcAge() {
+    	var curDate = new Date();
+
+    var curr_year = curDate.getFullYear();
+    var curr_month = curDate.getMonth();
+
+        var dt1 = document.getElementById("date").value;
+        var birth_date = new Date(dt1);
+
+        var birth_year = birth_date.getFullYear();
+        var birth_month = birth_date.getMonth();
+        var calc_year = curr_year - birth_year;
+        var calc_month = curr_month - birth_month;
+
+        //The following below is what I am not sure about. 
+        //I need to combine years and months and
+        //convert them into a string??? Is this syntax dead wrong?
+
+    var final_result =ceil((calc_year && "." && calc_month)toInteger);
+
+        // final result should be a number with a decimal point, example: 35.5
+        
+
+        document.getElementById("output").value= final_result;
+       
+    }
+    </script>
+</body>

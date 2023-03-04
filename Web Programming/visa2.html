@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>Form for Visa Application</title>
+</head>
+<body>
+<center><h1>VISA APPLICATION</h1>
+<fieldset>
+<form action="a.php" autocomplete="on" method="get" enctype="multipart/form-data>
+Enter your details below:
+<br>
+<table cellpadding="3" cellspacing="3">
+<tr>
+	<td>
+First name*:
+	</td>
+
+<td>
+<input type="text" name="first name" pattern=".{6,}" placeholder="first name" required></input>
+</td>
+</tr>
+<tr>
+	<td>
+Last name*:
+</td>
+<td>
+<input type="text" name="last name" placeholder="last name" required></input>
+</td>
+</tr>
+<tr>
+	<td>
+Contact No.*:
+</td>
+<td>
+<input type="tel" name="code" maxlength="3" pattern="[0-9]" placeholder="code" required>
+
+<input type="tel" name="telephone 1" maxlength="10" required ></input>
+</td>
+</tr>
+
+<tr>
+	<td>Contact No.:
+	</td>
+	<td>
+<input type="tel" name="telephone 2" maxlength="10" placeholder="if any" novalidate></input>
+</td>
+</tr>
+
+<tr>
+	<td>
+EMail Id.*:
+</td>
+<td>
+<input type="email" name="emai;" autocomplete="off" multiple="on" required></input>
+</td>
+</tr>
+
+<tr>
+	<td>DOB:</td>
+	<td>
+<input type="date" name="date" required>
+</td>
+</tr>
+
+<tr>
+	<td>
+Passport type*:
+</td>
+<td>
+	<input type="text" list="pp" placeholder="Click here to see options">
+<datalist id="pp" >
+<option value="Ordinary">
+<option value="Official">
+<option value="Diplomatic">
+<option value="Service">
+</datalist>
+</input>
+</td>
+</tr>
+
+<tr>
+	<td>
+No. of people you want to book the visa for:<br>(maximum is 5):
+</td>
+<td>
+<input type="range" id="r" name="a" min="1" max="5" required></input>
+<br>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5
+</td>
+</tr>
+
+<tr>
+	<td>
+No. of years for validity of visa:<br>(min:4 max:10):
+</td>
+<td>
+<input type="number" min="4" max="10" step="2" value="4" required>
+</td>
+</tr>
+
+<tr>
+	<td>
+Nationality:
+</td>
+<td>
+<select name="Nationality" required>
+<option value="1">Indian</option>
+<option value="2">American</option>
+<option value="2">Sri Lankan</option>
+<option value="2">Austraian</option>
+</select>
+</td>
+</tr>
+
+<tr>
+	<td>
+Visa Service:
+</td>
+	<td>
+<br>
+<input type="radio" name="rad" >eTourist Visa </input>
+<br>
+<input type="radio" name="rad" >eMedical Visa</input>
+<br>
+<input type="radio" name="rad" > eBusiness</input>
+<br>
+</td>
+</tr>
+</table>
+</fieldset>
+<center>
+<input type="submit" name="sub">
+</center>
+</form>
+</body>

@@ -1,0 +1,108 @@
+<?php
+//set session
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter details</title>
+	<style type="text/css">
+		div{
+			margin:20px 20px 20px 20px;
+			padding-bottom: 50px;
+		}
+		body{
+			background-color:#DEE9FC;
+
+		}
+		#t{
+			background-color:#DEE9FC ;
+			margin:50px 50px 50px 50px;
+			color:#1258DC;
+			font-size: 30px;
+
+		}
+		#cl{
+			margin-left:550px;
+			padding:20px;
+			font-style: bold;
+			font-size:20px;
+			border-radius:10px;
+			border: 1px solid black;
+			background-color: #091834;
+			color:#DEE9FC;
+		}
+	</style>
+	
+
+
+</head>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<body>
+<script>
+
+var x = document.getElementById("demo");
+  
+var lati;
+var longi;
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+
+    } 
+    else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    lati= position.coords.latitude ; 
+    longi= position.coords.longitude;
+    var ty=document.getElementById("dl").value;
+   
+  // alert("lat is "+lati+" longi is "+longi+" word is "+word);
+  $.post("lat.php",
+  	{
+  		lati : lati,
+  		longi : longi,
+  		ty:ty
+  	},function(status){
+  		//alert(status);
+  		location.href="travel3.php"
+  });//end of post req
+  }//end of fn
+  
+ 
+
+</script>
+
+	<!--	
+	<datalist id="foo">
+		<option>Breakfast </option>
+		<option>Lunch</option>
+		<option>Dinner</option>
+	</datalist>
+
+<div>Enter your Name: <input type="text" name="name" placeholder="maximum 40 characters"></div>
+<div>Choose your food preference: <input type="text" name="food" list="foo" placeholder="choose food"></div>-->
+
+<div id="t">
+	Get the nearest tourist Locations with our Website!!
+	Just click the button to let us access your location
+</div>
+<center><label style="margin-left:-120px;">Select the option:</label>
+	<datalist id="type">
+		<option value="1">Fun </option>
+		<option value="2">Site-seeing</option>
+		<option value="3">Eateries</option>
+	</datalist>
+	<input type="text" id="dl" list="type" />
+</center>
+	<br>
+<input type="submit" value="Submit" onclick="getLocation()" id="cl">
+
+
+<!--<div id="demo"></div>
+<button onclick="getLocation()">Click</button>-->
+</body>
+</html>

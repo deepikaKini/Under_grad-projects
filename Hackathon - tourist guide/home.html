@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>HOME</title>
+
+
+
+<style  type ="text/css"> 
+
+
+
+
+
+
+
+
+
+body{background-color:#DEE9FC;
+padding-right: 150px;}
+
+
+
+
+
+	h2{text-transform:uppercase;text-align:center;color:purple;}
+
+p{color:white;}
+
+
+
+
+
+
+
+
+.navli a {
+
+    display: block;
+
+    color: #6395F2;
+
+	font-size:20px;
+
+    text-align: center;
+
+    padding: 8px 15px;
+
+    text-decoration: none;
+
+}
+
+
+
+
+
+li a:hover {
+
+    background-color: black;
+
+}
+
+
+
+.active {
+
+    background-color:#091834;
+
+}
+
+
+
+
+
+#nav { 
+
+list-style: none;
+
+    
+
+	margin-left:60px;
+
+	margin-right:40px;
+
+	margin-top:8px;
+
+  
+
+	background-color: black;
+
+}
+
+li{
+
+    float: left;
+
+}
+
+}
+
+#nav a{
+
+display:block;
+
+text-align:center;
+
+background-color:white;
+
+text-decoration:none;
+
+}
+
+
+
+h1{text-transform:uppercase;text-shadow: 1.5px 1.5px black;text-align:center;color:black;}
+
+
+footer a{text-decoration: none;
+color:#0A337F;}
+
+
+</style>
+</head>
+
+<body>
+<div style="width:100%;"> 
+
+
+
+
+
+<center><img  src ="logo.png"  border ="0" height ="125px" width ="150px" style="margin-left:160px;"></center>
+
+</div>
+
+<!--<div style="float:right; width:90%; ">
+
+
+
+
+
+
+
+</div>-->
+
+<center>
+
+<ul id="nav" style="margin-left:400px;">
+
+ <li class="navli"><a class="active" href="home.html"><b>HOME</b></a></li>
+
+  <li class="navli"><a class="active" href="form.html"><b>PLACES</b></a></li>
+
+ 
+
+
+
+  <li class="navli"><a  class="active" href="aboutus.html"><b>ABOUT US</b></a></li>
+
+
+<li class="navli"><a  class="active" href="fb.html"><b>FEEDBACK FORM</b></a></li>
+</ul>
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="slideshow-container" style="margin-top:100px;margin-left:150px;">
+
+
+
+<div class="mySlides fade">
+
+  <img src="tourist-attractions-mumbai.jpg"  border ="1" height ="430px" width ="1000px" >
+
+ 
+
+</div>
+
+
+
+<div class="mySlides fade">
+
+  <img src="mumbai-worli-sea-link.jpg"  border ="1" height ="430px" width ="1000px">
+
+  
+
+</div>
+
+
+
+<div class="mySlides fade">
+
+   <img src="maxresdefault.jpg"  border ="1" height ="430px" width ="1000px">
+
+ 
+
+</div>
+
+
+
+
+
+
+
+<div class="mySlides fade">
+
+  <img src="1507892478_Taraporewala-Aquarium_-_Places-to-visit-in-Mumbai.jpg"  border ="1" height ="430px" width ="1000px">
+
+  
+
+</div>
+
+
+
+
+
+<div class="mySlides fade">
+
+  <img src="465224718Mumbai_Jama_Masjid_Main.jpg"  border ="1" height ="430px" width ="1000px">
+
+ 
+
+</div>
+
+
+
+<div class="mySlides fade">
+
+  <img src="_13365613020.jpg"  border ="1" height ="430px" width ="1000px">
+
+
+
+</div>
+
+
+
+
+
+<div class="mySlides fade">
+
+  <img src="images.jpeg"  border ="1" height ="430px" width ="1000px">
+
+ 
+
+</div>
+
+
+
+
+
+<div class="mySlides fade">
+
+  <img src="marine-drive-mumbai-e1469861116767.jpg"  border ="1" height ="430px" width ="1000px">
+
+  
+
+</div>
+
+
+
+
+<div style="text-align: center;" >
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function myFunction() {
+
+    var x = document.getElementById("snackbar")
+
+    x.className = "show";
+
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+}
+
+
+
+var slideIndex = 0;
+
+showSlides();
+
+
+
+function showSlides() {
+
+    var i;
+
+    var slides = document.getElementsByClassName("mySlides");
+
+    var dots = document.getElementsByClassName("dot");
+
+    for (i = 0; i < slides.length; i++) {
+
+       slides[i].style.display = "none";  
+
+    }
+
+    slideIndex++;
+
+    if (slideIndex> slides.length) {slideIndex = 1}    
+
+    for (i = 0; i < dots.length; i++) {
+
+        dots[i].className = dots[i].className.replace(" active", "");
+
+    }
+
+    slides[slideIndex-1].style.display = "block";  
+
+    dots[slideIndex-1].className += " active";
+
+    setTimeout(showSlides, 2000); 
+
+}
+
+</script>
+
+
+<h1 style="float:center;">MUMBAI TOURS ONLINE</h1>
+<p style="color:black;font-size:20px;text-align:justify;"> Mumbai is huge and diverse, and it does not fail to cast a spell on anyone who travels through it. Visitors to Mumbai are charmed, inspired and bemused by its diverse sights, sounds and smells.It is a holiday destination unlike any other in the World. Mumbai is perhaps the only destination in the World where in a two week holiday, you can do a high altitude trek, do a wildlife safari in a National Park, spend a night lazily cruising the backwaters, and still have time to relax on a beach !! Mumbai has all this and much more</p>
+
+<footer style="background-color:#091834;height:200px;">
+
+
+<div style="float:left;width:40%;font-size:16px;">
+<p><b><strong>&copyMumbai Tours Online.</strong></b>All Rights Reserved</p>
+
+</div>
+<div style="float:right; width:60%;font-size:16px;";><span style="color:white";>
+<b>HEAD OFFICE</b><br>
+
+<p>DEBUGGERS</p>
+
+<p>Phone:+(91)(11)-9234617<br></p>
+<p>Email-id:DEBUGGERS97@gmail.com</p>
+</div>
+</footer>
+
+
+
+</body>
+
+</html> 
+

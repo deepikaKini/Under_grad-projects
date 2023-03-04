@@ -1,0 +1,186 @@
+<html>
+<head>
+	<title>Canvas </title>
+</head>
+<body>
+<img id="pic" src="class.jpg" alt="classroom" hidden="true"></img>
+	<canvas id="Canvas1" width="400" height="400" style="border:1px solid #0000FF;">
+	</canvas>
+		<script>
+      			var canvas = document.getElementById('Canvas1');
+                        var context = canvas.getContext('2d');
+			
+	
+			//triangle
+                        context.beginPath();
+			context.fillStyle='#add8e6';
+			context.strokeStyle = 'darkblue';
+                        context.moveTo(200,10);
+		        context.lineTo(100,100);
+			context.lineTo(300,100);
+			context.lineTo(200,10);
+			context.fill();                        
+                        context.stroke();
+			context.closePath();
+
+			//circle
+                        context.beginPath();
+                        context.arc(200,160,60,0,360);
+			var radgrad=context.createRadialGradient(200,160,20,200,160,60);
+			radgrad.addColorStop('0.2','blue');
+			radgrad.addColorStop('0.5','white');
+			radgrad.addColorStop('0.8','maroon');
+			context.fillStyle=radgrad;
+		        context.strokeStyle = '#0000cc';
+                        context.fill();
+                        context.stroke();
+			context.closePath();
+
+			//rectangle
+                        context.beginPath();
+                        context.rect(100,220,200,100);
+			var linear=context.createLinearGradient(100,220,200,300,300,320);
+			linear.addColorStop('1','#b6b6b4');
+			linear.addColorStop('0.5','blue');
+			linear.addColorStop('0','#110000');
+
+			context.fillStyle=linear;
+		        context.strokeStyle = '#0000cc';
+                        context.fill();
+                        context.stroke();
+			context.closePath();
+
+			//line
+                        context.beginPath();
+			context.fillStyle='red';
+			context.strokeStyle = 'black';
+			context.lineWidth="5";
+			
+			
+			context.shadowOffsetX="4";
+			context.shadowOffsetY="4";
+			context.shadowBlur="0.5";
+			context.shadowColor="gray";
+
+
+			context.lineCap="round";
+			context.moveTo(200,330);
+			context.lineTo(200,340);
+			context.stroke();
+			
+			context.moveTo(250,330);
+			context.lineTo(250,340);
+			context.stroke();
+			
+			context.moveTo(300,330);
+			context.lineTo(300,340);
+			context.stroke();
+			context.lineCap="butt";
+			context.lineJoin="round";
+                        context.moveTo(100,350);
+		        context.lineTo(300,350);
+		        context.lineTo(100,360)			                   
+                        context.stroke();
+			context.closePath();
+
+                        		
+		</script>
+</canvas>
+ 
+	<canvas id="Canvas2" width="400" height="400" style="border:1px solid rgb(0,125,0);">
+	 <script>	
+              
+			window.onload = function() {
+    			var canvas = document.getElementById("Canvas2");
+   			var context = canvas.getContext("2d");
+			context.strokeStyle = 'red';
+			context.fillStyle=linear;
+			context.shadowOffsetX="-4";
+			context.shadowOffsetY="-1";
+			context.shadowBlur="0.7";
+			context.shadowColor="gray";
+			context.font = "50px FreeSans";
+			context.strokeText("TE IT",150,60); 
+			context.fillText("Batch 4",135,100); 
+			context.shadowOffsetX="0";
+			context.shadowOffsetY="0";
+    			var img = document.getElementById("pic");
+    			context.drawImage(img,60,140);
+			};
+		</script>
+
+	</canvas>
+
+	<canvas id="Canvas3" width="400" height="400"style="border:1px solid salmon;"></canvas>
+		 <script>		
+              		//CHRISTMAS TREE
+			var canvas = document.getElementById('Canvas3');
+                        var context = canvas.getContext('2d');
+			
+	
+			//triangle
+			context.fillStyle='#00aa00';
+			context.strokeStyle = '#00aa00';
+                        context.beginPath();
+			context.moveTo(200,10);
+		    context.lineTo(100,110);//
+			context.lineTo(150,110);//
+			context.lineTo(50,210);
+			context.lineTo(100,210);
+			context.lineTo(0,310);
+			context.lineTo(400,310);
+			context.lineTo(300,210);
+			context.lineTo(350,210);///
+			context.lineTo(250,110);
+			context.lineTo(300,110);
+			context.lineTo(200,10);///
+			
+			context.fill();                        
+            context.stroke();
+			context.closePath();
+  				
+  				context.fillStyle='#2b1b17';
+			context.strokeStyle = 'red';
+			context.beginPath();
+			context.moveTo(170,310);
+		        context.lineTo(170,400);
+			context.lineTo(230,400);
+			context.lineTo(230,310);
+			context.fill();                        
+            context.stroke();
+			context.closePath();
+  
+</script>
+		 
+	
+	<canvas id="star" height="500" width="500" style="border:1px solid rgb(0,125,0);">
+		canvas doesn't work
+		</canvas>
+		<script type="text/javascript">
+			var canv = document.getElementById("star");
+            var context = canv.getContext("2d");
+context.beginPath();
+context.fillStyle='red';
+context.moveTo(50,0);
+context.lineTo(25,25);
+context.lineTo(0,25);
+context.lineTo(25,50);
+context.lineTo(20,100);
+context.lineTo(50,75);
+context.lineTo(80,100);
+context.lineTo(75,50);
+context.lineTo(100,25);
+context.lineTo(75,25);
+context.lineTo(50,0);
+context.fill();
+context.stroke();
+context.closePath();
+
+
+ 
+</script>
+	
+
+<p style="font:normal bold 50px FreeSans;">hello</p> 
+</body>
+</html>

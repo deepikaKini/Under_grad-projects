@@ -1,0 +1,30 @@
+http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/
+
+https://github.com/vishalshar/SpeakerDiarization_RNN
+
+TIMIT
+
+http://github.com/cyrta/broadcast-news-videos-dataset
+
+
+http://www.dtic.mil/dtic/tr/fulltext/u2/a320696.pdf
+Speaker recog DOD RNN and HMM
+
+
+https://github.com/vishalshar/SpeakerDiarization_RNN
+
+
+https://www.researchgate.net/publication/224739062_A_Database_for_speaker-independent_digit_recognition
+
+https://catalog.ldc.upenn.edu/
+https://www.ee.columbia.edu/~dpwe/sounds/mr/
+https://github.com/awesomedata/awesome-public-datasets
+https://github.com/Jakobovski/free-spoken-digit-dataset%%%% say numbers and split label data
+
+
+http://www.openslr.org/12
+https://github.com/oscarknagg/voicemap
+https://github.com/huanghe314/Text-Independent-Speaker-Indentification-System/tree/master/Code
+https://github.com/pannous/tensorflow-speech-recognition/blob/master/generate_speech_data.py
+https://github.com/llSourcell/Make_a_neural_network/blob/master/demo.py
+https://github.com/pannous/caffe-speech-recognition/blob/master/README.md

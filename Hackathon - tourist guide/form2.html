@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enter details</title>
+	<style type="text/css">
+		div{
+			margin:20px 20px 20px 20px;
+			padding-bottom: 50px;
+		}
+	</style>
+	
+
+
+</head>
+<body>
+<script>
+
+var x = document.getElementById("demo");
+  
+var lati;
+var longi;
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+
+    } 
+    else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    lati= position.coords.latitude ; 
+    longi= position.coords.longitude;
+  //document.getElementById("demo").innerHTML= lati+" "+longi;
+    var xhttp; 
+     xhttp = new XMLHttpRequest();
+     xhttp.onreadystatechange = function() {
+
+     	
+     }
+  
+  }
+  
+ 
+
+</script>
+
+	
+<form name="f1" method="post" action="travel2.php">
+	
+	<datalist id="foo">
+		<option>Breakfast </option>
+		<option>Lunch</option>
+		<option>Dinner</option>
+	</datalist>
+
+<div>Enter your Name: <input type="text" name="name" placeholder="maximum 40 characters"></div>
+<div>Choose your food preference: <input type="text" name="food" list="foo" placeholder="choose food"></div>
+
+
+<input type="submit" value="Submit" >
+
+</form>
+
+<div id="demo"></div>
+<button onclick="getLocation()">Click</button>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+    width: 100px;
+    height: 100px;
+    border-radius:100%;
+    background-color: red;
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+    0%   {background-color: red;transform: translate(10px,10px);}
+    25%  {background-color: yellow;transform: translate(20px,20px);}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-color: red;transform: translate(10px,10px);}
+    12%  {background-color: yellow;transform: translate(20px,20px);}
+    25%  {background-color: blue;transform: translate(30px,30px);}
+   35% {background-color: green;transform: translate(40px,40px);}
+     50%   {background-color: red;transform: translate(60px,60px);}
+    60%  {background-color: yellow;transform: translate(880px,80px);}
+    70%  {background-color: blue;transform: translate(80px,-10px);}
+    100% {background-color: green;transform: translate(40px,40px);}
+}
+</style>
+</head>
+<body>
+
+
+
+<div></div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+
+div:hover {
+    width: 300px;
+}
+</style>
+</head>
+<body>
+
+<h1>The transition Property</h1>
+
+<p>Hover over the div element below, to see the transition effect:</p>
+<div></div>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+</body>
+</html>

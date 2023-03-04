@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>html5 workers </title>
+<script type="text/javascript">
+if(window.Worker)
+{
+  var worker;
+  worker=new Worker("extra_w.js");
+  worker.onmessage=function(event) {
+document.getElementById("here").innerHTML=event.data; };
+}
+else{
+alert('your browser does not support web workers');
+}
+</script>
+</head>
+<body>
+<p id="here"></p>
+</body>
+</html>
+
